@@ -13,9 +13,14 @@ app.use(express.json());
 
 app.use("/api/signal", signalRoutes);
 
-const PORT = process.env.PORT || 3000;
+const PORT = parseInt(process.env.PORT || "3000", 10);
 
-app.listen(PORT, () => {
+// app.listen(PORT, () => {
+//   console.log(`Server running on port ${PORT}`);
+//   startSignalJob();
+// });
+
+
+app.listen(PORT, "0.0.0.0", () => {
   console.log(`Server running on port ${PORT}`);
-  startSignalJob();
 });
