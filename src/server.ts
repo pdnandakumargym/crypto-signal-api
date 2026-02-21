@@ -11,6 +11,10 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  res.send("API is working");
+});
+
 app.use("/api/signal", signalRoutes);
 
 const PORT = parseInt(process.env.PORT || "3000", 10);
